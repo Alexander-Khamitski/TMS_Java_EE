@@ -1,0 +1,42 @@
+div.card {
+    background: lightgrey;
+}
+
+div.leftSide {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+div.rightSide {
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+div.table {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.center {
+    text-align: center;
+}
+
+p.description {
+    text-align: justify;
+}
+
+.material-icons-outlined {
+    /* Указание желаемого размера и цвета иконки */
+    font-size: 24px;
+    color: #e8eaed;
+}
+
+a {
+    width: 100%;
+}
