@@ -1,0 +1,21 @@
+// Create table
+CREATE TABLE "person" (
+	id INT not NULL UNIQUE,
+	name VARCHAR(20) not NULL,
+	surname VARCHAR(20) not NULL,
+	age INT not NULL,
+	passport_number VARCHAR(9) not NULL UNIQUE
+);
+
+// Add data
+INSERT INTO "person"(id,name,surname,age,passport_number) VALUES (1,'Ivan','Petrov', 29,'KV1111111');
+INSERT INTO "person"(id,name,surname,age,passport_number) VALUES (2,'Petr','Ivanov', 30,'KV2222222');
+INSERT INTO "person"(id,name,surname,age,passport_number) VALUES (3,'Roman','Ivanov', 31,'KV3333333');
+INSERT INTO "person"(id,name,surname,age,passport_number) VALUES (4,'Ivan','Romanov', 32,'KV4444444');
+INSERT INTO "person"(id,name,surname,age,passport_number) VALUES (5,'Tomson','Pills', 49,'KV5555555');
+
+// Update data
+UPDATE "person" SET age = 50 WHERE name = 'Roman';
+
+// Delete data
+DELETE FROM "person" WHERE age > 50;
