@@ -4,7 +4,7 @@ CREATE TABLE "person" (
 	name VARCHAR(20) NOT NULL,
 	surname VARCHAR(20) NOT NULL,
 	age INT NOT NULL,
-	passport_number VARCHAR(9) not NULL UNIQUE
+	passport_number VARCHAR(9) NOT NULL UNIQUE
 );
 
 // Add data
