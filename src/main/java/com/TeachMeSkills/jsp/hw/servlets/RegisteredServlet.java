@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
 @WebServlet("/registration")
@@ -31,17 +32,11 @@ public class RegisteredServlet extends HttpServlet {
     }
 
     private boolean isAnyValueNullOrEmpty(String firstName, String lastName, String amount) {
-        boolean flag = true;
-        try {
-            flag = firstName.isEmpty()
-                    || lastName.isEmpty()
-                    || amount.isEmpty()
-                    || firstName == null
-                    || lastName == null
-                    || amount == null;
-        } catch (NullPointerException e) {
-            System.out.println("Unexpected error: " + e.getMessage());
-        }
-        return flag;
+        return firstName == null
+                || lastName == null
+                || amount == null
+                || firstName.isEmpty()
+                || lastName.isEmpty()
+                || amount.isEmpty();
     }
 }
