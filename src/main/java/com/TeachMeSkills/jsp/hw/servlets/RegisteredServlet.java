@@ -11,6 +11,11 @@ import java.io.IOException;
 public class RegisteredServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/WEB-INF/save-request.jsp").forward(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -26,11 +31,17 @@ public class RegisteredServlet extends HttpServlet {
     }
 
     private boolean isAnyValueNullOrEmpty(String firstName, String lastName, String amount) {
-        return firstName.isEmpty()
-                || lastName.isEmpty()
-                || amount.isEmpty()
-                || firstName == null
-                || lastName == null
-                || amount == null;
+        boolean flag = true;
+        try {
+            flag = firstName.isEmpty()
+                    || lastName.isEmpty()
+                    || amount.isEmpty()
+                    || firstName == null
+                    || lastName == null
+                    || amount == null;
+        } catch (NullPointerException e) {
+            System.out.println("Unexpected error: " + e.getMessage());
+        }
+        return flag;
     }
 }
