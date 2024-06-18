@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Scope;
 public class AppConfig {
 
     @Bean
-    @Scope("singleton")
     public Task1 task1() {
         return new Task1();
     }
