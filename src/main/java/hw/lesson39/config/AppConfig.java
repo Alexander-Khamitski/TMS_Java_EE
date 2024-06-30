@@ -23,7 +23,6 @@ public class AppConfig {
     }
 
     @Bean
-    @Scope("singleton")
     public Task2 task2() {
         return new Task2();
     }
