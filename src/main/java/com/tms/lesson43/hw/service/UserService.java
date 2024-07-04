@@ -25,6 +25,27 @@ public class UserService {
         }
     }
 
+    public static User getUserInfo(int id) {
+        try {
+            Connection connection = PostgresDriverManager.getInstance().getConnection();
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM person WHERE id = ?");
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setSurname(resultSet.getString("surname"));
+                user.setAge(resultSet.getInt("age"));
+                user.setPassport_number(resultSet.getString("passport_number"));
+                return user;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
     public static boolean updateUser(User user) {
         try {
             Connection connection = PostgresDriverManager.getInstance().getConnection();
@@ -46,24 +67,5 @@ public class UserService {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static User getUserInfo(User user) {
-        try {
-            Connection connection = PostgresDriverManager.getInstance().getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM person WHERE id = ?");
-            statement.setInt(1, user.getId());
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                user.setName(resultSet.getString("name"));
-                user.setSurname(resultSet.getString("surname"));
-                user.setAge(resultSet.getInt("age"));
-                user.setPassport_number(resultSet.getString("passport_number"));
-                return user;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
     }
 }

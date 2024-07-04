@@ -72,22 +72,5 @@
     </dependencies>
     <build>
         <finalName>TMS_Java_EE</finalName>
-        <!--        <plugins>-->
-        <!--            <plugin>-->
-        <!--                <groupId>org.liquibase</groupId>-->
-        <!--                <artifactId>liquibase-maven-plugin</artifactId>-->
-        <!--                <version>4.28.0</version>-->
-        <!--                <configuration>-->
-        <!--                    <url>jdbc:postgresql://localhost:5432/tms</url>-->
-        <!--                    <username>admin</username>-->
-        <!--                    <password>admin</password>-->
-        <!--                    <schemas>-->
-        <!--                        <schema>tms</schema>-->
-        <!--                    </schemas>-->
-        <!--                    <changeLogFile>src/main/resources/db/migration/master.xml</changeLogFile>-->
-        <!--                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>-->
-        <!--                </configuration>-->
-        <!--            </plugin>-->
-        <!--        </plugins>-->
     </build>
 </project>

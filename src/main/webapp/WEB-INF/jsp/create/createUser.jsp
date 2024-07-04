@@ -5,6 +5,6 @@
     <title>Create user result</title>
 </head>
 <body>
-${message}
+<h2>${message}</h2>
 </body>
 </html>
