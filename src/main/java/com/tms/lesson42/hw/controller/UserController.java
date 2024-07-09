@@ -1,9 +1,9 @@
-package com.tms.lesson43.hw.controller;
+package com.tms.lesson42.hw.controller;
 
 import java.util.Objects;
 
-import com.tms.lesson43.hw.model.User;
-import com.tms.lesson43.hw.service.UserService;
+import com.tms.lesson42.hw.model.User;
+import com.tms.lesson42.hw.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;

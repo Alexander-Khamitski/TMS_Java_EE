@@ -1,11 +1,11 @@
-package com.tms.lesson43.hw.service;
+package com.tms.lesson42.hw.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.tms.lesson43.hw.model.User;
+import com.tms.lesson42.hw.model.User;
 
 public class UserService {
 

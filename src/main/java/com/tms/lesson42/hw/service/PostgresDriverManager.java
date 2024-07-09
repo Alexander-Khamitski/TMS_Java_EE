@@ -1,4 +1,4 @@
-package com.tms.lesson43.hw.service;
+package com.tms.lesson42.hw.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
