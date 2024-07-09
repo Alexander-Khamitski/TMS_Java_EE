@@ -7,31 +7,29 @@
     <artifactId>TMS_Java_EE</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <name>TMS_Java_EE</name>
     <url>http://maven.apache.org</url>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version>
-    </parent>
-
-    <properties>
-        <spring.version>6.1.8</spring.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.24</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.24</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -39,31 +37,10 @@
             <version>42.7.3</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <version>10.1.20</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.3</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.web</groupId>
-            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-            <version>2.0.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -77,6 +54,40 @@
                         <outputDirectory>/Users/alexander.khamitski/apache-tomcat-9.0.87/webapps</outputDirectory>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>/Users/alexander.khamitski/apache-tomcat-9.0.87/webapps</directory>
+                                <includes>
+                                    <include>TMS_Java_EE</include>
+                                </includes>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </plugin>
+                <!--                <plugin>-->
+                <!--                    <artifactId>maven-resources-plugin</artifactId>-->
+                <!--                    <version>3.0.2</version>-->
+                <!--                </plugin>-->
+                <!--                <plugin>-->
+                <!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+                <!--                    <version>3.8.0</version>-->
+                <!--                </plugin>-->
+                <!--                <plugin>-->
+                <!--                    <artifactId>maven-surefire-plugin</artifactId>-->
+                <!--                    <version>2.22.1</version>-->
+                <!--                </plugin>-->
+                <!--                <plugin>-->
+                <!--                    <artifactId>maven-install-plugin</artifactId>-->
+                <!--                    <version>2.5.2</version>-->
+                <!--                </plugin>-->
+                <!--                <plugin>-->
+                <!--                    <artifactId>maven-deploy-plugin</artifactId>-->
+                <!--                    <version>2.8.2</version>-->
+                <!--                </plugin>-->
             </plugins>
         </pluginManagement>
     </build>

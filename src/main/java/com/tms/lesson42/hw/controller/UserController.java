@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping(value = "/create")
     public ModelAndView fillCreateUserForm() {
-        return new ModelAndView("create/createUserForm", "user", new User());
+        return new ModelAndView("createUserForm", "user", new User());
     }
 
     @PostMapping(value = "/create")
@@ -34,15 +34,15 @@ public class UserController {
             UserService.createUser(user);
             String message = String.format("User with '%s' id has been created successfully!", user.getId());
             model.addAttribute("message", message);
-            return new ModelAndView("create/createUser", "user", new User());
+            return new ModelAndView("createUser", "user", new User());
         }
         model.addAttribute("message", errorMessage);
-        return new ModelAndView("create/createUserForm", "user", new User());
+        return new ModelAndView("createUserForm", "user", new User());
     }
 
     @GetMapping(value = "/get")
     public ModelAndView fillGetUserForm() {
-        return new ModelAndView("get/getUserForm", "user", new User());
+        return new ModelAndView("getUserForm", "user", new User());
     }
 
     @PostMapping(value = "/get")
@@ -54,16 +54,16 @@ public class UserController {
             model.addAttribute("surname", user.getSurname());
             model.addAttribute("age", user.getAge());
             model.addAttribute("passport_number", user.getPassport_number());
-            return new ModelAndView("get/getUser", "user", new User());
+            return new ModelAndView("getUser", "user", new User());
 
         }
         model.addAttribute("message", errorMessage);
-        return new ModelAndView("get/getUserForm", "user", new User());
+        return new ModelAndView("getUserForm", "user", new User());
     }
 
     @GetMapping(value = "/update")
     public ModelAndView fillUpdateUserForm() {
-        return new ModelAndView("update/updateUserForm", "user", new User());
+        return new ModelAndView("updateUserForm", "user", new User());
     }
 
     @PostMapping(value = "/update")
@@ -72,15 +72,15 @@ public class UserController {
             UserService.updateUser(user);
             String message = String.format("User with '%s' id has been updated successfully!", user.getId());
             model.addAttribute("message", message);
-            return new ModelAndView("update/updateUser", "user", new User());
+            return new ModelAndView("updateUser", "user", new User());
         }
         model.addAttribute("message", errorMessage);
-        return new ModelAndView("update/updateUserForm", "user", new User());
+        return new ModelAndView("updateUserForm", "user", new User());
     }
 
     @GetMapping(value = "/delete")
     public ModelAndView fillDeleteUserForm() {
-        return new ModelAndView("delete/deleteUserForm", "user", new User());
+        return new ModelAndView("deleteUserForm", "user", new User());
     }
 
     @PostMapping(value = "/delete")
@@ -89,9 +89,9 @@ public class UserController {
             UserService.deleteUser(user);
             String message = String.format("User with '%s' id has been deleted successfully!", user.getId());
             model.addAttribute("message", message);
-            return new ModelAndView("delete/deleteUser", "user", new User());
+            return new ModelAndView("deleteUser", "user", new User());
         }
         model.addAttribute("message", errorMessage);
-        return new ModelAndView("delete/deleteUserForm", "user", new User());
+        return new ModelAndView("deleteUserForm", "user", new User());
     }
 }
