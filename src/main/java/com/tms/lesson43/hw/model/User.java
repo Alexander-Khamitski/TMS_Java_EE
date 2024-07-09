@@ -11,7 +11,7 @@ public class User {
     private String name;
     private String surname;
     private int age;
-    private String passport_number;
+    private String passportNumber;
 
     @Override
     public String toString() {
@@ -20,7 +20,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", passport_number='" + passport_number + '\'' +
+                ", passport_number='" + passportNumber + '\'' +
                 '}';
     }
 }

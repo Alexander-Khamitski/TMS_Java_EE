@@ -5,15 +5,11 @@
     <title>User Info</title>
 </head>
 <body>
-<h2> Requested user info: </h2>
-id: ${id}
-<br>
-name: ${name}
-<br>
-surname: ${surname}
-<br>
-age: ${age}
-<br>
-passport_number: ${passport_number}
+<h2>Requested user info:</h2>
+<p>id: ${user.id}</p>
+<p>name: ${user.name}</p>
+<p>surname: ${user.surname}</p>
+<p>age: ${user.age}</p>
+<p>passport number: ${user.passportNumber}</p>
 </body>
 </html>

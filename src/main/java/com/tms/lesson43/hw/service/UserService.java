@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.tms.lesson43.hw.model.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserService {
 
-    public static boolean createUser(User user) {
+    public boolean createUser(User user) {
         try {
             Connection connection = PostgresDriverManager.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(
@@ -18,14 +20,14 @@ public class UserService {
             statement.setString(2, user.getName());
             statement.setString(3, user.getSurname());
             statement.setInt(4, user.getAge());
-            statement.setString(5, user.getPassport_number());
+            statement.setString(5, user.getPassportNumber());
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static User getUserInfo(int id) {
+    public User getUserInfo(int id) {
         try {
             Connection connection = PostgresDriverManager.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM person WHERE id = ?");
@@ -37,7 +39,7 @@ public class UserService {
                 user.setName(resultSet.getString("name"));
                 user.setSurname(resultSet.getString("surname"));
                 user.setAge(resultSet.getInt("age"));
-                user.setPassport_number(resultSet.getString("passport_number"));
+                user.setPassportNumber(resultSet.getString("passport_number"));
                 return user;
             }
         } catch (SQLException e) {
@@ -46,7 +48,7 @@ public class UserService {
         return null;
     }
 
-    public static boolean updateUser(User user) {
+    public boolean updateUser(User user) {
         try {
             Connection connection = PostgresDriverManager.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement("update person set surname = ? where id = ?;");
@@ -58,11 +60,11 @@ public class UserService {
         }
     }
 
-    public static boolean deleteUser(User user) {
+    public boolean deleteUser(int id) {
         try {
             Connection connection = PostgresDriverManager.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement("delete from person where id = ?;");
-            statement.setInt(1, user.getId());
+            statement.setInt(1, id);
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -7,14 +7,14 @@
 </head>
 <body>
 <h2>${message}</h2>
-<form:form action="/user/get" method="post" modelAttribute="user">
+<form action="/user/get" method="post">
     <div>
-        <form:label path="id"><h3>Enter ID:</h3></form:label>
-        <form:input path="id" type="text"  value="" />
+        <label for="id"><h3>Enter ID:</h3></label>
+        <input type="text" id="id" name="id" />
     </div>
     <div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
     </div>
-</form:form>
+</form>
 </body>
 </html>
