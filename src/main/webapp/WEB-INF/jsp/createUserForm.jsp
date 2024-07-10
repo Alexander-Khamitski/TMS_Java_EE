@@ -25,8 +25,8 @@
         <form:input path="age" type="number" value="" />
     </div>
     <div>
-        <form:label path="passport_number"><h3>Enter passport number:</h3></form:label>
-        <form:input path="passport_number" type="text" value="" />
+        <form:label path="passportNumber"><h3>Enter passport number:</h3></form:label>
+        <form:input path="passportNumber" type="text" value="" />
     </div>
     <div>
         <button>Submit</button>
