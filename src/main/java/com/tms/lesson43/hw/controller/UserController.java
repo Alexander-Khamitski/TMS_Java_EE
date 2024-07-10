@@ -46,21 +46,32 @@ public class UserController {
     }
 
     @GetMapping(value = "/get")
-    public ModelAndView fillGetUserForm() {
-        return new ModelAndView("get/getUserForm", "user", new User());
-    }
-
-    @PostMapping(value = "/get")
-    public ModelAndView getUser(@RequestParam("id") int id, Model model) {
-        if (!isUserNull(id) && id != 0) {
+    public ModelAndView getUser(@RequestParam(value = "id", required = false) Integer id, Model model) {
+        if (id != null && !isUserNull(id) && id != 0) {
             User requestedUser = userService.getUserInfo(id);
             model.addAttribute("user", requestedUser);
             return new ModelAndView("get/getUser");
-
         }
         model.addAttribute("message", errorMessage);
         return new ModelAndView("get/getUserForm", "user", new User());
     }
+
+//    @GetMapping(value = "/get")
+//    public ModelAndView fillGetUserForm() {
+//        return new ModelAndView("get/getUserForm", "user", new User());
+//    }
+//
+//    @GetMapping(value = "/get")
+//    public ModelAndView getUser(@RequestParam("id") int id, Model model) {
+//        if (!isUserNull(id) && id != 0) {
+//            User requestedUser = userService.getUserInfo(id);
+//            model.addAttribute("user", requestedUser);
+//            return new ModelAndView("get/getUser");
+//
+//        }
+//        model.addAttribute("message", errorMessage);
+//        return new ModelAndView("get/getUserForm", "user", new User());
+//    }
 
     @GetMapping(value = "/update")
     public ModelAndView fillUpdateUserForm() {
