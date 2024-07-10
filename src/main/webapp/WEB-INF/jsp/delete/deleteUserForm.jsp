@@ -1,0 +1,20 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete User</title>
+</head>
+<body>
+<h2>${message}</h2>
+<form action="/user/delete" method="post">
+    <div>
+        <label for="id"><h3>Enter ID:</h3></label>
+        <input type="text" id="id" name="id" />
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+</body>
+</html>
