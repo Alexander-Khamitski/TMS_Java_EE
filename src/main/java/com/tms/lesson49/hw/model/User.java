@@ -1,4 +1,4 @@
-package com.tms.lesson43.hw.model;
+package com.tms.lesson49.hw.model;
 
 import lombok.Getter;
 import lombok.Setter;
