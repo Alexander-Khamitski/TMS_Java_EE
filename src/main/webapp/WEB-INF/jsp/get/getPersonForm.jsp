@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2>${message}</h2>
-<form action="/user/get" method="get">
+<form action="/person/get" method="get">
     <div>
         <label for="id"><h3>Enter ID:</h3></label>
         <input type="text" id="id" name="id" />

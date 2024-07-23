@@ -7,14 +7,26 @@
 </head>
 <body>
 <h2>${message}</h2>
-<form:form action="/user/update" method="post" modelAttribute="user">
+<form:form action="/person/update" method="post" modelAttribute="person">
     <div>
         <form:label path="id"><h3>Enter ID:</h3></form:label>
         <form:input path="id" type="text"  value="" />
     </div>
     <div>
+        <form:label path="name"><h3>Enter name:</h3></form:label>
+        <form:input path="name" type="text"  value="" />
+    </div>
+    <div>
         <form:label path="surname"><h3>Enter surname:</h3></form:label>
         <form:input path="surname" type="text"  value="" />
+    </div>
+    <div>
+        <form:label path="age"><h3>Enter age:</h3></form:label>
+        <form:input path="age" type="number" value="" />
+    </div>
+    <div>
+        <form:label path="passportNumber"><h3>Enter passport number:</h3></form:label>
+        <form:input path="passportNumber" type="text" value="" />
     </div>
     <div>
         <button>Submit</button>
