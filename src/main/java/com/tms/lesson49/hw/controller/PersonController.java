@@ -16,7 +16,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/person")
-public class UserController {
+public class PersonController {
 
     @Autowired
     private PersonService personService;

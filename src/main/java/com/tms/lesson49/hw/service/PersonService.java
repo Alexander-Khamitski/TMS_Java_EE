@@ -1,9 +1,5 @@
 package com.tms.lesson49.hw.service;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import com.tms.lesson49.hw.model.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
