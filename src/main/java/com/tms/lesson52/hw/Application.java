@@ -1,4 +1,4 @@
-package com.tms.lesson49.hw;
+package com.tms.lesson52.hw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

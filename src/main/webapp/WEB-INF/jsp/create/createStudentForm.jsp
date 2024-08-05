@@ -3,15 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update User</title>
+    <title>Create Student</title>
 </head>
 <body>
 <h2>${message}</h2>
-<form:form action="/person/update" method="post" modelAttribute="person">
-    <div>
-        <form:label path="id"><h3>Enter ID:</h3></form:label>
-        <form:input path="id" type="text"  value="" />
-    </div>
+<form:form action="/student/create" method="post" modelAttribute="student">
     <div>
         <form:label path="name"><h3>Enter name:</h3></form:label>
         <form:input path="name" type="text"  value="" />
@@ -21,12 +17,12 @@
         <form:input path="surname" type="text"  value="" />
     </div>
     <div>
-        <form:label path="age"><h3>Enter age:</h3></form:label>
-        <form:input path="age" type="number" value="" />
+        <form:label path="groupId"><h3>Enter group id:</h3></form:label>
+        <form:input path="groupId" type="number" value="" />
     </div>
     <div>
-        <form:label path="passportNumber"><h3>Enter passport number:</h3></form:label>
-        <form:input path="passportNumber" type="text" value="" />
+        <form:label path="ispaid"><h3>Is Paid:</h3></form:label>
+        <form:checkbox path="ispaid" />
     </div>
     <div>
         <button>Submit</button>

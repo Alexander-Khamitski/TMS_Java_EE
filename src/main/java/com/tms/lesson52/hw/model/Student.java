@@ -1,4 +1,4 @@
-package com.tms.lesson49.hw.model;
+package com.tms.lesson52.hw.model;
 
 import java.util.Objects;
 
@@ -12,13 +12,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "person")
+@Table(name = "student")
 @Getter
 @Setter
-public class Person {
+public class Student {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -28,35 +28,30 @@ public class Person {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "age")
-    private int age;
+    @Column(name = "group_id")
+    private int groupId;
 
-    @Column(name = "passport_number")
-    private String passportNumber;
+    @Column(name = "ispaid")
+    private boolean ispaid;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return id == person.id && age == person.age && Objects.equals(name,
-                                                                      person.name) && Objects.equals(
-                surname, person.surname) && Objects.equals(passportNumber, person.passportNumber);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, surname, age, passportNumber);
+        Student student = (Student) o;
+        return id == student.id && groupId == student.groupId && ispaid == student.ispaid && Objects.equals(name,
+                                                                                                            student.name) && Objects.equals(
+                surname, student.surname);
     }
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", passportNumber='" + passportNumber + '\'' +
+                ", groupId=" + groupId +
+                ", isPaid=" + ispaid +
                 '}';
     }
 }

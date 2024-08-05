@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update user result</title>
+    <title>Update student result</title>
 </head>
 <body>
 <h2>${message}</h2>

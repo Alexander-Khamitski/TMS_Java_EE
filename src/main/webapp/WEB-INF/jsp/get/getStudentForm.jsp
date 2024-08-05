@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Delete User</title>
+    <title>Get Student</title>
 </head>
 <body>
 <h2>${message}</h2>
-<form action="/person/delete" method="post">
+<form action="/student/get" method="get">
     <div>
         <label for="id"><h3>Enter ID:</h3></label>
-        <input type="text" id="id" name="id" />
+        <input type="number" id="id" name="id" />
     </div>
     <div>
         <button type="submit">Submit</button>
